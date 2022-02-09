@@ -1,0 +1,42 @@
+{
+	"name": "flexsyscz/model",
+	"description": "Model features over Nextras ORM.",
+	"keywords": ["flexsyscz", "model", "database", "entity", "repository", "facade"],
+	"homepage": "https://www.flexsys.cz",
+	"license": ["BSD-3-Clause", "GPL-2.0-only", "GPL-3.0-only"],
+	"authors": [
+		{
+			"name": "Václav Lukeš",
+			"homepage": "https://www.vaclavlukes.cz"
+		}
+	],
+	"require": {
+		"php": ">=8.1",
+		"nextras/orm": "^4.0",
+		"flexsyscz/date-time": "^1.0"
+	},
+	"require-dev": {
+		"nette/tester": "^2.4",
+		"phpstan/phpstan-nette": "^1.0",
+		"nette/coding-standard": "^3.2",
+		"nette/bootstrap": "^3.1"
+	},
+	"autoload": {
+		"classmap": ["src/"]
+	},
+	"minimum-stability": "stable",
+	"scripts": {
+		"phpstan": "phpstan analyse",
+		"tester": "tester tests -s"
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "1.0-dev"
+		}
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
+}
