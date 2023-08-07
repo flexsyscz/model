@@ -6,6 +6,7 @@ require __DIR__ . '/Resources/Users/User.php';
 require __DIR__ . '/Resources/Users/UsersMapper.php';
 require __DIR__ . '/Resources/Users/UsersRepository.php';
 require __DIR__ . '/Resources/Users/UserType.php';
+require __DIR__ . '/Resources/Users/UsersFacade.php';
 
 Tester\Environment::setup();
 date_default_timezone_set('Europe/Prague');

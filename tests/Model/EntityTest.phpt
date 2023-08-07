@@ -10,6 +10,8 @@ use Tester\Assert;
 use Tester\TestCase;
 use Tests\Resources\Orm;
 use Tests\Resources\Users\User;
+use Tests\Resources\Users\UsersFacade;
+use Tests\Resources\Users\UsersRepository;
 use Tests\Resources\Users\UserType;
 
 require __DIR__ . '/../bootstrap.php';
@@ -108,6 +110,17 @@ class EntityTest extends TestCase
 		foreach ($users->fetchAll() as $user) {
 			Assert::equal($newPassword, $user->password);
 			Assert::notNull($user->updatedAt, sprintf('Expected %s', DateTimeImmutable::class));
+		}
+	}
+
+
+	public function testFacade(): void
+	{
+		$facade = new UsersFacade($this->orm);
+		Assert::equal(UsersRepository::class, $facade->getRepository()::class);
+
+		foreach ($facade->getAllUsers() as $user) {
+			Assert::equal(User::class, $user::class);
 		}
 	}
 }
