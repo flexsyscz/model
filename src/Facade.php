@@ -34,7 +34,7 @@ abstract class Facade
 	}
 
 
-	abstract public function create(): Nextras\Orm\Entity\IEntity;
+	abstract public function create(Values $values): Nextras\Orm\Entity\IEntity;
 	abstract public function update(Nextras\Orm\Entity\IEntity $entity, Values $values): void;
 	abstract public function delete(Nextras\Orm\Entity\IEntity $entity): void;
 }

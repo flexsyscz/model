@@ -11,7 +11,7 @@ use Nextras;
 
 final class UsersFacade extends Facade
 {
-	public function create(): Nextras\Orm\Entity\IEntity
+	public function create(Values $values): Nextras\Orm\Entity\IEntity
 	{
 		$entity = new User();
 
