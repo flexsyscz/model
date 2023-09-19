@@ -14,3 +14,13 @@ dbal:
 
 orm:
 	model: Tests\Resources\Orm
+
+database:
+	dsn: 'mysql:host=%db.host%;dbname=%db.database%'
+	user: %db.username%
+	password: %db.password%
+	options:
+		lazy: yes
+
+services:
+	- Flexsyscz\Model\ConsistencyChecker\Checker

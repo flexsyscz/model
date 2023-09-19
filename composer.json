@@ -1,6 +1,6 @@
 {
 	"name": "flexsyscz/model",
-	"description": "Model features over Nextras ORM.",
+	"description": "Model features over Nextras ORM & Nette Database.",
 	"keywords": ["flexsyscz", "model", "database", "entity", "repository", "facade"],
 	"homepage": "https://www.flexsys.cz",
 	"license": ["BSD-3-Clause", "GPL-2.0-only", "GPL-3.0-only"],
@@ -13,6 +13,7 @@
 	"require": {
 		"php": ">=8.1",
 		"nextras/orm": "^4.0",
+		"nette/database": "^3.1",
 		"flexsyscz/date-time": "^1.0"
 	},
 	"require-dev": {
