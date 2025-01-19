@@ -7,6 +7,9 @@ namespace Flexsyscz\Model;
 use Nextras;
 
 
+/**
+ * @template E of Nextras\Orm\Entity\IEntity
+ */
 abstract class Facade
 {
 	protected Nextras\Orm\Model\Model $orm;
@@ -16,11 +19,14 @@ abstract class Facade
 		$this->orm = $orm;
 	}
 
-
+	/**
+	 * @return Nextras\Orm\Repository\IRepository<E>
+	 */
 	public function getRepository(): Nextras\Orm\Repository\IRepository
 	{
+		/** @var class-string<Nextras\Orm\Repository\IRepository<E>> $className */
 		$className = (string) preg_replace('#Facade$#', 'Repository', get_class($this));
-		if(!class_exists($className) || !is_subclass_of($className, Nextras\Orm\Repository\IRepository::class)) {
+		if(!class_exists($className)) {
 			throw new InvalidArgumentException("Repository '$className' does not exist.");
 		}
 
