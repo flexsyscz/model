@@ -5,11 +5,18 @@ declare(strict_types=1);
 namespace Flexsyscz\Model;
 
 use Flexsyscz\DateTime\DateTimeProvider;
+use Nette\Security\Resource;
 use Nextras;
 
 
-abstract class Entity extends Nextras\Orm\Entity\Entity
+abstract class Entity extends Nextras\Orm\Entity\Entity implements Resource
 {
+	public function getResourceId(): string
+	{
+		return static::class;
+	}
+
+
 	/**
 	 * @param array<mixed> $values
 	 * @return Nextras\Orm\Entity\IEntity
