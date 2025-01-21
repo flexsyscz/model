@@ -58,7 +58,7 @@ final class Checker
 		$this->warnings = [];
 
 		$local = $local ?? $this->report();
-		$description = $description && array_key_exists('remote', $description) && array_key_exists('local', $description) ? $description : ['remote' => 'REMOTE', 'local' => 'LOCAL'];
+		$description = is_array($description) && array_key_exists('remote', $description) && array_key_exists('local', $description) ? $description : ['remote' => 'REMOTE', 'local' => 'LOCAL'];
 		$parameters = ['type', 'nullable', 'collation'];
 
 		foreach ($remote as $table => $columns) {

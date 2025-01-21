@@ -27,7 +27,7 @@ class EntityTest extends TestCase
 
 	public function setUp(): void
 	{
-		$configurator = new Nette\Configurator();
+		$configurator = new Nette\Bootstrap\Configurator();
 		$configurator->addConfig(__DIR__ . '/../config/dbal.neon')
 			->addConfig(__DIR__ . '/../config/local.neon');
 
